@@ -59,7 +59,6 @@ from benchmark_report import (
     run_report_cli,
 )
 
-
 Perplexity = dict[str, Any]
 Run = dict[str, Any]
 ComparisonMatch = tuple[str, Run, Run]

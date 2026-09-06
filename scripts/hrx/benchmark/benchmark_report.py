@@ -83,7 +83,6 @@ from collections.abc import Callable, Mapping
 from pathlib import Path
 from typing import Any, TypeVar
 
-
 UNAVAILABLE_MEASUREMENT = "—"
 
 K = TypeVar("K")

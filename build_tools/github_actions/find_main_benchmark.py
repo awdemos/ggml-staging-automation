@@ -21,13 +21,12 @@ the GitHub API cannot be queried.
 from __future__ import annotations
 
 import argparse
-from dataclasses import dataclass
 import sys
-from typing import Callable
+from collections.abc import Callable
+from dataclasses import dataclass
 from urllib.parse import urlencode
 
 from github_actions_api import GitHubAPIError, gha_send_request, gha_set_output
-
 
 JsonRequest = Callable[[str], object]
 RECENT_RUNS_TO_CHECK = 20

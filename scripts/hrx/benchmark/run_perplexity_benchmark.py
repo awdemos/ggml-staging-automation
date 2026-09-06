@@ -38,7 +38,6 @@ from benchmark_output import (
 )
 from run_batched_benchmark import ModelSpec, load_manifest
 
-
 FINAL_ESTIMATE_PATTERN = re.compile(
     r"Final estimate: PPL = (?P<value>[0-9.]+) \+/- (?P<uncertainty>[0-9.]+)"
 )

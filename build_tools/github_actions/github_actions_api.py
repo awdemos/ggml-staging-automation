@@ -14,19 +14,20 @@ See also https://pypi.org/project/github-action-utils/.
 
 import base64
 import binascii
-from enum import Enum, auto
 import json
 import logging
 import os
-from pathlib import Path
 import re
 import shutil
 import subprocess
 import sys
-from typing import Any, Mapping
+from collections.abc import Mapping
+from enum import Enum, auto
+from pathlib import Path
+from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote
-from urllib.request import urlopen, Request
+from urllib.request import Request, urlopen
 
 
 def _log(*args, **kwargs):
@@ -40,7 +41,6 @@ class GitHubAPIError(Exception):
     Raised when a GitHub API request fails, whether via REST API or gh CLI.
     """
 
-    pass
 
 
 class GitHubAPI:
@@ -337,7 +337,7 @@ def gha_set_env(vars: Mapping[str, str | Path]):
         return
 
     with open(env_file, "a") as f:
-        f.writelines(f"{k}={str(v)}" + "\n" for k, v in vars.items())
+        f.writelines(f"{k}={v!s}" + "\n" for k, v in vars.items())
 
 
 def gha_set_output(vars: Mapping[str, str | Path]):
@@ -358,8 +358,8 @@ def gha_set_output(vars: Mapping[str, str | Path]):
 
     with open(step_output_file, "a") as f:
         for k, v in vars.items():
-            print(f"OUTPUT {k}={str(v)}")
-            f.write(f"{k}={str(v)}\n")
+            print(f"OUTPUT {k}={v!s}")
+            f.write(f"{k}={v!s}\n")
 
 
 def gha_append_step_summary(summary: str):
