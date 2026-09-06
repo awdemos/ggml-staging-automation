@@ -32,7 +32,6 @@ from typing import Any
 
 from benchmark_output import append_batch_log, merge_benchmark_output
 
-
 BENCHMARK_BACKEND_ARGS = "--ignore-eos"
 
 

@@ -31,7 +31,7 @@ THEROCK_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Add build_tools to path for github_actions imports.
 sys.path.insert(0, str(THEROCK_DIR / "build_tools"))
-from github_actions.github_actions_api import (  # noqa: E402
+from github_actions.github_actions_api import (
     gha_append_step_summary,
     gha_load_github_event,
     gha_set_output,

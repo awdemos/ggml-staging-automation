@@ -77,11 +77,11 @@ import sys
 import time
 import urllib.parse
 import urllib.request
+from collections.abc import Callable
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Callable
-
+from typing import Any
 
 GIB = 1024**3
 RESERVED_BYTES = 2 * GIB
